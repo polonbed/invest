@@ -1,0 +1,28 @@
+body{
+    background-color: rgb(155, 180, 202);
+    color: rgb(255, 255, 255);
+    font-family: 'Amatic SC';
+
+}
+h1{
+    color: rgb(69, 99, 138);
+    font-size: 90px;
+}
+h2{
+    font-size: 40px;
+}
+
+.heartsteal{
+    display: block;
+    margin: auto;
+    transform: scale(2);
+    margin-top: 300px;
+    margin-bottom: 300px;
+}
+
+
+.t{
+    display: block;
+    color: black;
+    margin: auto;
+}
