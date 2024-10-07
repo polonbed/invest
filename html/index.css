@@ -2,27 +2,53 @@ body{
     background-color: rgb(155, 180, 202);
     color: rgb(255, 255, 255);
     font-family: 'Amatic SC';
-
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.8)), url('clove_new.jpg');
+    background-size: cover;
+    background-position: 50%;
+    
+    font-size: 50;
 }
+
+
 h1{
     color: rgb(69, 99, 138);
     font-size: 90px;
 }
 h2{
+    font-size: 50px;
+}
+li{
+    font-size: 30px;
+}
+
+.clove{
+    display: block;
+    width: 600px;
+    margin: auto;
+}
+
+.tb{
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+}
+
+.anket{
+    color: rgb(43, 33, 51);
+}
+
+
+thead{
+    font-weight: bolder;
+}
+form{
     font-size: 40px;
 }
-
-.heartsteal{
-    display: block;
-    margin: auto;
-    transform: scale(2);
-    margin-top: 300px;
-    margin-bottom: 300px;
+input{
+    font-size: 20px;
 }
 
-
-.t{
-    display: block;
-    color: black;
-    margin: auto;
+.base{
+    width: 1900px;
+    
 }
+

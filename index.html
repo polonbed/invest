@@ -4,20 +4,43 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Инвестиции</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+		<link rel="stylesheet" href="dist/theme/serif.css" id="theme">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section class="center">
+					<h1>Инвестиции</h1>
+				</section>
+				<section class="center">
+					<h2>Определения</h2>
+				</section>
+				<section data-markdown="markdown/presantation/invest.md"></section>
+				<section data-markdown="markdown/presantation/trading.md"></section>
+				<section data-markdown="markdown/presantation/market.md"></section>
+				<section data-markdown="markdown/presantation/exchange.md"></section>
+				<section data-markdown="markdown/presantation/broker.md"></section>
+				<section data-markdown="markdown/presantation/security_paper.md"></section>
+				<section data-markdown="markdown/presantation/types.md"></section>
+				<section data-markdown="markdown/presantation/investment_portfolio.md"></section>
+				<section data-markdown="markdown/presantation/deversification.md"></section>
+				<section data-markdown="markdown/presantation/spread.md"></section>
+				<section data-markdown="markdown/presantation/bull_and_bear.md"></section>
+				<section data-markdown="markdown/presantation/bull.md"></section>
+				<section data-markdown="markdown/presantation/bear.md"></section>
+				<section data-markdown="markdown/presantation/flat.md"></section>
+				<section data-markdown="markdown/presantation/rate_of_return.md"></section>
+				<section data-markdown="markdown/presantation/line_chart.md"></section>
+				<section data-markdown="markdown/presantation/cadlestick.md"></section>
+				
 			</div>
 		</div>
 
@@ -31,6 +54,21 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				center: false,
+				slideNumber: true,
+				controls: true,
+				dependencies:[
+					{
+						src:'plugin/menu/menu.js'
+					},
+					{
+						src:'plugin/fullscreen/fullscreen.js'
+					}
+				],
+				menu: {
+					numbers: true,
+					markers: true,
+				},
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
