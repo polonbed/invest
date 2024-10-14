@@ -8,11 +8,12 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/serif.css" id="theme">
+		<link rel="stylesheet" href="dist/theme/blood.css" id="theme">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
 		
+		<link rel="stylesheet" href="st.css">
 	</head>
 	<body>
 		<div class="reveal">
@@ -37,9 +38,55 @@
 				<section data-markdown="markdown/presantation/bull.md"></section>
 				<section data-markdown="markdown/presantation/bear.md"></section>
 				<section data-markdown="markdown/presantation/flat.md"></section>
-				<section data-markdown="markdown/presantation/rate_of_return.md"></section>
+				<section>
+					<section data-markdown>
+						<script type="text/template">
+							### Доходность
+
+							Доходность по методу Дитца:
+
+							Введем обозначения:
+							- $R$ - доходность портфеля в процентах 
+							- $S_e$ - это стоимость портфеля на конец периода 
+							- $S_b$ - это стоимость портфеля на начало периода
+							- $S_a$ - ополнение счета
+							- $S_w$ - снятие со счета
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							- $W_t$ - временной весовой коэффициент, который применяется к каждому денежному потоку в портфеле
+							- $T$ - длительность отчетного периода в днях, за который считается доходность
+							- $t$ - количество дней с начала инвестирования
+
+							$$
+							W_t = \dfrac{T-t}{T}
+							$$
+
+							$$
+							R = \dfrac{S_e-S_b-\sum S_a+\sum S_w}{S_b+\sum(S_aW_t)-\sum(S_wW_t)}
+							$$
+						</script>
+					</section>
+				</section>
+				<section>
+					<h2>Графики</h2>
+				</section>
 				<section data-markdown="markdown/presantation/line_chart.md"></section>
 				<section data-markdown="markdown/presantation/cadlestick.md"></section>
+				<section data-fullscreen>
+					<iframe data-src="html/candlestick.html" class="stretch"></iframe>
+				</section>
+				<section class="center">
+					<h2>Монополия</h2>
+				</section>
+				<section data-fullscreen>
+					<iframe data-src="html/monopoly.html" class="stretch"></iframe>
+				</section>
+				<section class="center">
+					<h2>Юмор</h2>
+					<img src="heartsteel-kayn.gif" class="kayn">
+				</section>
 				
 			</div>
 		</div>
@@ -63,7 +110,11 @@
 					},
 					{
 						src:'plugin/fullscreen/fullscreen.js'
-					}
+					},
+					{
+						src: 'plugin/katex/katex.js',
+						async: true,
+					},
 				],
 				menu: {
 					numbers: true,
