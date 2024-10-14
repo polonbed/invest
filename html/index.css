@@ -10,6 +10,10 @@ body{
 }
 
 
+.strike{
+    text-decoration: line-through;
+}
+
 h1{
     color: rgb(69, 99, 138);
     font-size: 90px;
@@ -47,8 +51,12 @@ input{
     font-size: 20px;
 }
 
-.base{
-    width: 1900px;
-    
+.ball{
+    color: rgb(43, 33, 51);
 }
+
+.text_ball{
+    font-size: 40px;
+}
+
 
