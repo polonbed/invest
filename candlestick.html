@@ -11,13 +11,40 @@
     <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-data-adapter.min.js"></script>
 
 </head>
+<style>
+    html, body, #container{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
 <body>
     <div id="container">
 
     </div>
     <script>
-        anychart.OnDocumentReady(function() {
-            anychart.data.loadCsvFile();
+        anychart.onDocumentReady(function() {
+            anychart.data.loadCsvFile('csv/moex.csv', function(data){
+                let chart = anychart.stock();
+                chart.title('График фкций Московской биржи');
+                chart.container('container');
+                chart.draw();
+                dataTable = anychart.data.table(0, 'MMM d, yyyy');
+                dataTable.addData(data);
+                mapping = dataTable.mapAs({
+                    'open': 1,
+                    'high': 2,
+                    'low': 3,
+                    'close': 4,
+                });
+                series = chart.plot(0).candlestick(mapping);
+                series.name('MOEX');
+                series.fallingFill('red');
+                series.fallingStroke('black');
+                series.risingStroke('black');
+                series.risingFill('green');
+            });
         });
     </script>
 </body>
