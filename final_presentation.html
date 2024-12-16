@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Аналитическая геометрия</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/blood.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<style>
+			h1{
+				font-size: 110px !important
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section class="center">
+					<h1>Аналит геометрия</h1>
+				</section>
+				<section class="center">
+					<h2>Определения</h2>
+				</section>
+				<section data-markdown="markdown/pres/opredelenie.md"></section>
+                <section class="center">
+					<h2>Уравнение прямой на плоскости</h2>
+				</section>
+				<section data-markdown="markdown/pres/opr_1.md"></section>
+                <section data-markdown="markdown/pres/pr_1.md"></section>
+                <section data-markdown="markdown/pres/opr_2.md"></section>
+                <section data-markdown="markdown/pres/pr_2.md"></section>
+                <section data-markdown="markdown/pres/opr_3.md"></section>
+                <section data-markdown="markdown/pres/pr_3.md"></section>
+                <section data-markdown="markdown/pres/opr_4.md"></section>
+                <section data-markdown="markdown/pres/pr_4.md"></section>
+				
+					
+				
+				
+				
+				
+			</div>
+		</div>
+        <script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				center: false,
+				slideNumber: true,
+				controls: true,
+				dependencies:[
+					{
+						src:'plugin/menu/menu.js'
+					},
+					{
+						src:'plugin/fullscreen/fullscreen.js'
+					},
+					{
+						src: 'plugin/katex/katex.js',
+						async: true,
+					},
+				],
+				menu: {
+					numbers: true,
+					markers: true,
+				},
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+		
+	</body>
+</html>
