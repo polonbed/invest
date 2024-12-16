@@ -12,6 +12,7 @@
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 		<style>
 			h1{
 				font-size: 110px !important
@@ -39,11 +40,106 @@
                 <section data-markdown="markdown/pres/pr_3.md"></section>
                 <section data-markdown="markdown/pres/opr_4.md"></section>
                 <section data-markdown="markdown/pres/pr_4.md"></section>
+				<section class="center">
+					<h2>Описание алгоритмов перевода</h2>
+				</section>
+                <section>
+                    <section data-markdown="markdown/pres/alg_1_1.md"></section>
+                    <section data-markdown="markdown/pres/alg_1_2.md"></section>
+                </section>
+                <section>
+                    <section data-markdown="markdown/pres/alg_2_1.md"></section>
+                    <section data-markdown="markdown/pres/alg_2_2.md"></section>
+                </section>
+
+                <section>
+                    <h3>Построение уравнения прямой</h3>
+                    
+                    $x_1$ = <input type="number" id="x1" placeholder="x1">
+                    $y_1$ = <input type="number" id="y1" placeholder="y1"><br>
+
+                    
+                    $x_2$ = <input type="number" id="x2" placeholder="x2">
+                    $y_2$ = <input type="number" id="y2" placeholder="y2"><br>
+
+                    <button onclick="calculateLineEquation()">Построить уравнение</button><br>
+
+                    Уравнение прямой:
+                    <div id="result_1"></div>
+
+                    <script>
+                        function calculateLineEquation() {
+                            const x1 = parseFloat(document.getElementById('x1').value);
+                            const y1 = parseFloat(document.getElementById('y1').value);
+                            const x2 = parseFloat(document.getElementById('x2').value);
+                            const y2 = parseFloat(document.getElementById('y2').value);
+
+                            if (x1 === x2) {
+                                document.getElementById('result').innerHTML = 'Прямая вертикальная: x = ' + x1;
+                            } else {
+                                const slope = (y2 - y1) / (x2 - x1); // Наклон
+                                const intercept = y1 - slope * x1; // Свободный член
+                                const equation = `y = ${slope.toFixed(2)}x + ${intercept.toFixed(2)}`;
+                                document.getElementById('result_1').innerHTML = `$$${equation}$$`;
+                                MathJax.typeset(); // Обновление MathJax для отображения TeX
+                            }
+                        }
+                    </script>
+                </section>
+
+                <section>
+                    <h3>Перевод общего уравнения прямой в каноническое</h3>
+                    <label for="a">Коэффициент a:</label>
+                    <input type="number" id="a" required>
+                    <br>
+                    <label for="b">Коэффициент b:</label>
+                    <input type="number" id="b" required>
+                    <br>
+                    <label for="c">Коэффициент c:</label>
+                    <input type="number" id="c" required>
+                    <br>
+                    <button onclick="convertEquation()">Преобразовать</button><br>
+                    Результат:
+                    <div id="result_2"></div>
+
+                    <script>
+                        function convertEquation() {
+                            const a = parseFloat(document.getElementById('a').value);
+                            const b = parseFloat(document.getElementById('b').value);
+                            const c = parseFloat(document.getElementById('c').value);
+
+                            const x1 = 1.0;
+                            const x2 = 2.0;
+                            const y1 = (-a*x1-c)/b
+                            const y2 = (-a*x1-c)/b
+
+                            const p1 = x2 - x1;
+                            const p2 = y2 - x1;
+                            const slope = -a / b; // Наклон
+                            const intercept = -c / b; // Пересечение с осью y
+                            
+                            }
+                        
+                    </script>
+                </section>
 				
-					
 				
 				
-				
+				<section class="center">
+					<h2>Юмор</h2>
+					<img src="meme_1.jpg" class="kayn">
+				</section>
+				<section class="center">
+					<h2>Юмор</h2>
+					<img src="meme_2.jpg" class="kayn">
+				</section>
+                <section class="center">
+					<h2>Юмор</h2>
+					<img src="meme_3.jpg" class="kayn">
+				</section>
+				<section class="center" data-menu-title="Заключительный слайд">
+					<h2>Спасибо за внимание</h2>
+				</section>
 				
 			</div>
 		</div>
