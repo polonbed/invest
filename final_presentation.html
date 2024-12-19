@@ -15,7 +15,10 @@
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 		<style>
 			h1{
-				font-size: 110px !important
+				font-size: 100px !important
+			}
+			.tost{
+				height: 500px;
 			}
 		</style>
 	</head>
@@ -23,7 +26,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<section class="center">
-					<h1>Аналит геометрия</h1>
+					<h1>Аналитическая геометрия</h1>
 				</section>
 				<section class="center">
 					<h2>Определения</h2>
@@ -52,8 +55,215 @@
                     <section data-markdown="markdown/pres/alg_2_2.md"></section>
                 </section>
 
+				<section data-markdown="markdown/pres/alg_3_1.md"></section>
+
+				<section>
+                    <section data-markdown="markdown/pres/alg_4_1.md"></section>
+                    <section data-markdown="markdown/pres/alg_4_2.md"></section>
+                </section>
+
+				<section>
+                    <section data-markdown="markdown/pres/alg_5_1.md"></section>
+                    <section data-markdown="markdown/pres/alg_5_2.md"></section>
+                </section>
+
+				<section>
+                    <section data-markdown="markdown/pres/alg_6_1.md"></section>
+                    <section data-markdown="markdown/pres/alg_6_2.md"></section>
+                </section>
+
                 <section>
-                    <h3>Построение уравнения прямой</h3>
+					<h3>Калькуляторы для перевода из одного вида уравнений прямой в другой</h3>
+				</section>
+
+                <section>
+                    <h3>Перевод общего уравнения прямой в каноническое</h3>
+                    <label for="a_1">Коэффициент a:</label>
+                    <input type="number" id="a_1" required>
+                    <br>
+                    <label for="b_1">Коэффициент b:</label>
+                    <input type="number" id="b_1" required>
+                    <br>
+                    <label for="c_1">Коэффициент c:</label>
+                    <input type="number" id="c_1" required>
+                    <br>
+                    <button onclick="convertEquation_1()">Преобразовать</button><br>
+                    Результат:
+                    <div id="result_2"></div>
+
+                    <script>
+                        function convertEquation_1() {
+                            const a = parseFloat(document.getElementById('a_1').value);
+                            const b = parseFloat(document.getElementById('b_1').value);
+                            const c = parseFloat(document.getElementById('c_1').value);
+
+                            const x1 = 1.0;
+                            const x2 = 2.0;
+                            const y1 = (-a*x1-c)/b;
+                            const y2 = (-a*x1-c)/b;
+
+                            const p1 = x2 - x1;
+                            const p2 = y2 - x1;
+                            const slope = -a / b; // Наклон
+                            const intercept = -c / b; // Пересечение с осью y\
+
+							if (x1<0){
+								document.getElementById('result_2').innerHTML = `$$\\dfrac{x + ${-x1}}{${p1}} = \\dfrac{y - ${y1}}{${p2}}$$`;
+                                MathJax.typeset(); // Обновление MathJax для отображения TeX
+							}
+							else if(y1<0){
+								document.getElementById('result_2').innerHTML = `$$\\dfrac{x - ${x1}}{${p1}} = \\dfrac{y + ${-y1}}{${p2}}$$`;
+                                MathJax.typeset(); // Обновление MathJax для отображения TeX
+							}
+							else{
+								document.getElementById('result_2').innerHTML = `$$\\dfrac{x - ${x1}}{${p1}} = \\dfrac{y - ${y1}}{${p2}}$$`;
+                                MathJax.typeset(); // Обновление MathJax для отображения TeX
+							}
+                            
+						}
+                    </script>
+                </section>
+
+
+				<section>
+                    <h3>Перевод общего уравнения прямой в параметрическое</h3>
+                    <label for="a_2">Коэффициент a:</label>
+                    <input type="number" id="a_2" required>
+                    <br>
+                    <label for="b_2">Коэффициент b:</label>
+                    <input type="number" id="b_2" required>
+                    <br>
+                    <label for="c_2">Коэффициент c:</label>
+                    <input type="number" id="c_2" required>
+                    <br>
+                    <button onclick="convertEquation_2()">Преобразовать</button><br>
+                    Результат:
+                    <div id="result_3"></div>
+
+                    <script>
+                        function convertEquation_2() {
+                            const a_2 = parseFloat(document.getElementById('a_2').value);
+                            const b_2 = parseFloat(document.getElementById('b_2').value);
+                            const c_2 = parseFloat(document.getElementById('c_2').value);
+
+                            const x1_2 = 1.0;
+                            const x2_2 = 2.0;
+                            const y1_2 = (-a_2*x1_2-c_2)/b_2;
+                            const y2_2 = (-a_2*x1_2-c_2)/b_2;
+
+                            const p1 = x2_2 - x1_2;
+                            const p2 = y2_2 - x1_2;
+                            
+
+							if (p2<0){
+								document.getElementById('result_3').innerHTML = `$$
+								\\begin{equation*}
+								\\begin{cases}
+								x = ${x1_2} + ${p1}t\\
+								
+								y = ${y1_2} - ${-p2}t
+
+								\\end{cases}
+								\\end{equation*}
+								$$`;
+								MathJax.typeset(); // Обновление MathJax для отображения TeX
+							}
+							else{
+								document.getElementById('result_3').innerHTML = `$$x = ${x1_2} + ${p1}t$$
+							
+								$$y = ${y1_2} + ${p2}t$$`;
+								MathJax.typeset(); // Обновление MathJax для отображения TeX
+							}
+                            
+						}
+                    </script>
+                </section>
+
+
+				
+				<section>
+                    <h3>Перевод канонического уравнения прямой в общее</h3>
+                    <label for="x_0">$x_0$:</label>
+                    <input type="number" id="x_0" required>
+                    
+                    <label for="y_0">$y_0$:</label>
+                    <input type="number" id="y_0" required>
+                    <br>
+                    <label for="p_1">$p_1$:</label>
+                    <input type="number" id="p_1" required>
+					<label for="p_2">$p_2$:</label>
+                    <input type="number" id="p_2" required>
+					<br>
+                    
+                    <button onclick="convertEquation_3()">Преобразовать</button><br>
+                    Результат:
+                    <div id="result_4"></div>
+
+                    <script>
+                        function convertEquation_3() {
+                            const x_0 = parseFloat(document.getElementById('x_0').value);
+                            const y_0 = parseFloat(document.getElementById('y_0').value);
+                            const p_1 = parseFloat(document.getElementById('p_1').value);
+							const p_2 = parseFloat(document.getElementById('p_2').value);
+
+                            const k_1 = p_2*x_0;
+							const j_1 = p_1*y_0;
+							const sum = j_1 - k_1;
+
+							if (sum < 0){
+								document.getElementById('result_4').innerHTML = `$$${p_2}x - ${p_1}y - ${-sum} = 0$$`;
+								MathJax.typeset(); // Обновление MathJax для отображения TeX
+							}
+							else{
+								document.getElementById('result_4').innerHTML = `$$${p_2}x - ${p_1}y + ${sum} = 0$$`;
+								MathJax.typeset(); // Обновление MathJax для отображения TeX
+							}
+                            
+						}
+                    </script>
+                </section>
+
+
+
+				<section>
+                    <h3>Перевод канонического уравнения прямой в параметрическое</h3>
+                    <label for="x_0">$x_0$:</label>
+                    <input type="number" id="x_0_1" required>
+                    
+                    <label for="y_0">$y_0$:</label>
+                    <input type="number" id="y_0_1" required>
+                    <br>
+                    <label for="p_1">$p_1$:</label>
+                    <input type="number" id="p_1_1" required>
+					<label for="p_2">$p_2$:</label>
+                    <input type="number" id="p_2_1" required>
+					<br>
+                    
+                    <button onclick="convertEquation_4()">Преобразовать</button><br>
+                    Результат:
+                    <div id="result_5"></div>
+
+                    <script>
+                        function convertEquation_4() {
+                            const x_0_1 = parseFloat(document.getElementById('x_0_1').value);
+                            const y_0_1 = parseFloat(document.getElementById('y_0_1').value);
+                            const p_1_1 = parseFloat(document.getElementById('p_1_1').value);
+							const p_2_1 = parseFloat(document.getElementById('p_2_1').value);
+
+							document.getElementById('result_5').innerHTML = `$$x = ${x_0_1} + ${p_1_1}t$$
+							
+							$$y = ${y_0_1} + ${p_2_1}t$$`;
+							MathJax.typeset(); // Обновление MathJax для отображения TeX
+                            
+						}
+                    </script>
+                </section>
+
+				<section>
+					<h3>Построение уравнения прямой по двум точкам</h3>
+				</section>
+				<section>
+                    <h3>Построение уравнения прямой по двум точкам</h3>
                     
                     $x_1$ = <input type="number" id="x1" placeholder="x1">
                     $y_1$ = <input type="number" id="y1" placeholder="y1"><br>
@@ -87,47 +297,12 @@
                     </script>
                 </section>
 
-                <section>
-                    <h3>Перевод общего уравнения прямой в каноническое</h3>
-                    <label for="a">Коэффициент a:</label>
-                    <input type="number" id="a" required>
-                    <br>
-                    <label for="b">Коэффициент b:</label>
-                    <input type="number" id="b" required>
-                    <br>
-                    <label for="c">Коэффициент c:</label>
-                    <input type="number" id="c" required>
-                    <br>
-                    <button onclick="convertEquation()">Преобразовать</button><br>
-                    Результат:
-                    <div id="result_2"></div>
 
-                    <script>
-                        function convertEquation() {
-                            const a = parseFloat(document.getElementById('a').value);
-                            const b = parseFloat(document.getElementById('b').value);
-                            const c = parseFloat(document.getElementById('c').value);
-
-                            const x1 = 1.0;
-                            const x2 = 2.0;
-                            const y1 = (-a*x1-c)/b
-                            const y2 = (-a*x1-c)/b
-
-                            const p1 = x2 - x1;
-                            const p2 = y2 - x1;
-                            const slope = -a / b; // Наклон
-                            const intercept = -c / b; // Пересечение с осью y
-                            
-                            }
-                        
-                    </script>
-                </section>
-				
 				
 				
 				<section class="center">
 					<h2>Юмор</h2>
-					<img src="meme_1.jpg" class="kayn">
+					<img src="meme_1.jpg" class="tost">
 				</section>
 				<section class="center">
 					<h2>Юмор</h2>
