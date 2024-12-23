@@ -157,15 +157,14 @@
 
 							if (p2<0){
 								document.getElementById('result_3').innerHTML = `$$
-								\\begin{equation*}
-								\\begin{cases}
-								x = ${x1_2} + ${p1}t\\
 								
-								y = ${y1_2} - ${-p2}t
+								x = ${x1_2} + ${p1}t
+								
 
-								\\end{cases}
-								\\end{equation*}
-								$$`;
+								
+
+								
+								$$ $$y = ${y1_2} - ${-p2}t$$`;
 								MathJax.typeset(); // Обновление MathJax для отображения TeX
 							}
 							else{
@@ -209,6 +208,8 @@
                             const k_1 = p_2*x_0;
 							const j_1 = p_1*y_0;
 							const sum = j_1 - k_1;
+
+                            
 
 							if (sum < 0){
 								document.getElementById('result_4').innerHTML = `$$${p_2}x - ${p_1}y - ${-sum} = 0$$`;
